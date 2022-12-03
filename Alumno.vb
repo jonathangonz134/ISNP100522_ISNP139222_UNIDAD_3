@@ -6,6 +6,9 @@
     Private apellido As String
     Private sexo As String
     Private direccion As String
+    Private dui As String
+    Private edad As String
+    Private correo As String
 
 
 
@@ -53,6 +56,47 @@
     End Property
 
 
+    '####################################################################
+    'Modificaciones
+    'metodo para dui
+    Public Property duiAlumno() As String
+        Get
+            Return dui
+        End Get
+        Set(value As String)
+            dui = value
+
+        End Set
+    End Property
+
+
+
+    'metodo edad
+    Public Property edadAlumno() As String
+        Get
+            Return edad
+        End Get
+        Set(value As String)
+            edad = value
+
+        End Set
+    End Property
+
+
+    'metodo para correo
+    Public Property correoAlumno() As String
+        Get
+            Return correo
+        End Get
+        Set(value As String)
+            correo = value
+
+        End Set
+    End Property
+
+    '##################################################################
+
+
 
 
     'metodo para direccion del alumno
@@ -92,7 +136,10 @@
                            ByVal nombreA As String,
                            ByVal apellidoA As String,
                            ByVal sexoA As String,
-                           ByVal direccionA As String)
+                           ByVal direccionA As String,
+                           ByVal duiA As String,
+                           ByVal edadA As String,
+                           ByVal correoA As String)
 
         datosCompletos = False 'asume que los datos recibidos son incorrectos
 
@@ -142,12 +189,37 @@
             direccion = direccionA
             datosCompletos = True
         End If
+
+
+
+        '############################################################################################
+        'modificado
+        If duiA.Length = 0 Then
+            MessageBox.Show("Debe ingresar numero de DUI")
+            Exit Sub
+        Else
+            dui = duiA
+        End If
+
+
+
+        If edadA.Length = 0 Then
+            MessageBox.Show("Debe ingresar la edad ")
+            Exit Sub
+        Else
+            edad = edadA
+        End If
+
+
+        If correoA.Length = 0 Then
+            MessageBox.Show("debe ingresar Correo Electronico")
+            Exit Sub
+        Else
+            correo = correoA
+        End If
     End Sub
 
-
-
-
-
+    '#################################################################################################
 
     Public Function generarCodigo(ByVal nombre As String)
 

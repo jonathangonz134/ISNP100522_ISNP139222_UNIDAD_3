@@ -3,7 +3,7 @@
     Dim alumno As New Alumno
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
 
-        alumno.datosAlumno(txtCodigo.Text, txtNombre.Text, txtApellido.Text, txtSexo.Text, txtDireccion.Text)
+        alumno.datosAlumno(txtCodigo.Text, txtNombre.Text, txtApellido.Text, txtSexo.Text, txtDireccion.Text, txtDui.Text, txtEdad.Text, txtCorreo.Text)
 
 
         'Para visualizar los datos ingresados
@@ -12,7 +12,11 @@
                               alumno.nombreAlumno,
                               alumno.apellidoAlumno,
                               alumno.sexoAlumno,
-                              alumno.direccionAlumno)
+                              alumno.direccionAlumno,
+                              alumno.duiAlumno,
+                              alumno.edadAlumno,
+                              alumno.correoAlumno)
+
 
 
         If alumno.datosAceptados Then
@@ -26,6 +30,11 @@
         txtApellido.Text = ("")
         txtSexo.Text = ("")
         txtDireccion.Text = ("")
+        txtEdad.Text = ("")
+        txtDui.Text = ("")
+        txtCorreo.Text = ("")
+        txtDireccion.Text = ("")
+
 
     End Sub
 
